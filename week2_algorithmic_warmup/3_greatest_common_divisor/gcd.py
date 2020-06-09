@@ -9,8 +9,15 @@ def gcd_naive(a, b):
                 current_gcd = d
 
     return current_gcd
+def gcd(a, b):
+    # print(a,b)
+    if b == 0:
+        return a
+    else:
+        return gcd(b, int(a%b))
 
 if __name__ == "__main__":
-    input = sys.stdin.read()
+    input = input()
     a, b = map(int, input.split())
-    print(gcd_naive(a, b))
+    # print(gcd_naive(a, b))
+    print(gcd(a,b))
